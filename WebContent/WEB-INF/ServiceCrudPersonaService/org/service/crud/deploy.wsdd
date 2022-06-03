@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceCrudPersonaService WSDL service -->
+
+  <service name="ServiceCrudPersona" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://crud.service.org"/>
+      <parameter name="wsdlServiceElement" value="ServiceCrudPersonaService"/>
+      <parameter name="schemaQualified" value="http://crud.service.org"/>
+      <parameter name="wsdlServicePort" value="ServiceCrudPersona"/>
+      <parameter name="className" value="org.service.crud.ServiceCrudPersona"/>
+      <parameter name="wsdlPortType" value="ServiceCrudPersona"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://crud.service.org" name="connectDataBaseOracle" qname="operNS:connectDataBaseOracle" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="altaPErsona" qname="operNS:altaPErsona" returnQName="retNS:altaPErsonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:nombre" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:apepat" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:tel" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="eliminarPersona" qname="operNS:eliminarPersona" returnQName="retNS:eliminarPersonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="modificarPersona" qname="operNS:modificarPersona" returnQName="retNS:modificarPersonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Nombre" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Apepat" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:Tel" type="tns:string"/>
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://crud.service.org" xmlns:retNS="http://crud.service.org" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consultaIndividualPersona" qname="operNS:consultaIndividualPersona" returnQName="retNS:consultaIndividualPersonaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://crud.service.org" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="connectDataBaseOracle eliminarPersona altaPErsona consultaIndividualPersona modificarPersona"/>
+
+  </service>
+</deployment>

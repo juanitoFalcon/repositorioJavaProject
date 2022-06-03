@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://crud.service.org" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://crud.service.org" xmlns:intf="http://crud.service.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://crud.service.org" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="connectDataBaseOracle">
+    <complexType/>
+   </element>
+   <element name="connectDataBaseOracleResponse">
+    <complexType/>
+   </element>
+   <element name="altaPErsona">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="nombre" type="xsd:string"/>
+      <element name="apepat" type="xsd:string"/>
+      <element name="tel" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="altaPErsonaResponse">
+    <complexType>
+     <sequence>
+      <element name="altaPErsonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarPersona">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarPersonaResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarPersonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modificarPersona">
+    <complexType>
+     <sequence>
+      <element name="Nombre" type="xsd:string"/>
+      <element name="Apepat" type="xsd:string"/>
+      <element name="Tel" type="xsd:string"/>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="modificarPersonaResponse">
+    <complexType>
+     <sequence>
+      <element name="modificarPersonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaIndividualPersona">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaIndividualPersonaResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaIndividualPersonaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="connectDataBaseOracleResponse">
+
+      <wsdl:part element="impl:connectDataBaseOracleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarPersonaRequest">
+
+      <wsdl:part element="impl:modificarPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="modificarPersonaResponse">
+
+      <wsdl:part element="impl:modificarPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarPersonaResponse">
+
+      <wsdl:part element="impl:eliminarPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaIndividualPersonaRequest">
+
+      <wsdl:part element="impl:consultaIndividualPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="altaPErsonaResponse">
+
+      <wsdl:part element="impl:altaPErsonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaIndividualPersonaResponse">
+
+      <wsdl:part element="impl:consultaIndividualPersonaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="connectDataBaseOracleRequest">
+
+      <wsdl:part element="impl:connectDataBaseOracle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="altaPErsonaRequest">
+
+      <wsdl:part element="impl:altaPErsona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarPersonaRequest">
+
+      <wsdl:part element="impl:eliminarPersona" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServiceCrudPersona">
+
+      <wsdl:operation name="connectDataBaseOracle">
+
+         <wsdl:input message="impl:connectDataBaseOracleRequest" name="connectDataBaseOracleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:connectDataBaseOracleResponse" name="connectDataBaseOracleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="altaPErsona">
+
+         <wsdl:input message="impl:altaPErsonaRequest" name="altaPErsonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:altaPErsonaResponse" name="altaPErsonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarPersona">
+
+         <wsdl:input message="impl:eliminarPersonaRequest" name="eliminarPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:eliminarPersonaResponse" name="eliminarPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modificarPersona">
+
+         <wsdl:input message="impl:modificarPersonaRequest" name="modificarPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:modificarPersonaResponse" name="modificarPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIndividualPersona">
+
+         <wsdl:input message="impl:consultaIndividualPersonaRequest" name="consultaIndividualPersonaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaIndividualPersonaResponse" name="consultaIndividualPersonaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceCrudPersonaSoapBinding" type="impl:ServiceCrudPersona">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="connectDataBaseOracle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="connectDataBaseOracleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="connectDataBaseOracleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="altaPErsona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="altaPErsonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="altaPErsonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="modificarPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="modificarPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="modificarPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaIndividualPersona">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaIndividualPersonaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaIndividualPersonaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceCrudPersonaService">
+
+      <wsdl:port binding="impl:ServiceCrudPersonaSoapBinding" name="ServiceCrudPersona">
+
+         <wsdlsoap:address location="http://localhost:7575/WerbServiceServidorSOAP/services/ServiceCrudPersona"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
